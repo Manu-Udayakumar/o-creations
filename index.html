@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Creation Travel & Tourism | Transforming Dreams into Reality</title>
+    <meta name="description" content="Premium travel & tourism agency based in Guruvayoor, Kerala. Offering domestic & international tours, honeymoon packages, and more. ISO 9001:2015 certified.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ====== UAE LAUNCH ANNOUNCEMENT POPUP ====== -->
+    <div class="launch-overlay" id="launch-overlay">
+        <div class="launch-popup" id="launch-popup" role="dialog" aria-modal="true" aria-labelledby="launch-title">
+
+            <!-- Decorative top bar -->
+            <div class="launch-topbar"></div>
+
+            <!-- Close button -->
+            <button class="launch-close" id="launch-close" aria-label="Close announcement">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Flag + badge row -->
+            <div class="launch-badge-row">
+                <span class="launch-flag">🇦🇪</span>
+                <span class="launch-badge">Exciting News</span>
+            </div>
+
+            <!-- Brand Logo -->
+            <div class="launch-logo-wrap">
+                <div class="launch-logo-frame">
+                    <img src="assets/logo.png" alt="O Creation" class="launch-logo">
+                </div>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="launch-title" id="launch-title">We're Coming to the <span>UAE!</span></h2>
+            <p class="launch-subtitle">O'Creation Travel &amp; Tourism is officially expanding <br>to the United Arab Emirates.</p>
+
+            <!-- Launch date display -->
+            <div class="launch-date-block">
+                <div class="launch-date-icon"><i class="fas fa-calendar-star"></i></div>
+                <div>
+                    <span class="launch-date-label">Official Launch Date</span>
+                    <span class="launch-date-value">23<sup>rd</sup> May 2026</span>
+                </div>
+            </div>
+
+            <!-- Live countdown -->
+            <div class="launch-countdown" id="launch-countdown">
+                <div class="cd-unit" id="cd-days">
+                    <span class="cd-num">--</span>
+                    <span class="cd-label">Days</span>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-unit" id="cd-hours">
+                    <span class="cd-num">--</span>
+                    <span class="cd-label">Hours</span>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-unit" id="cd-mins">
+                    <span class="cd-num">--</span>
+                    <span class="cd-label">Mins</span>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-unit" id="cd-secs">
+                    <span class="cd-num">--</span>
+                    <span class="cd-label">Secs</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <a href="#contact" class="btn btn-primary launch-cta" id="launch-cta">
+                Register Interest &nbsp;<i class="fas fa-arrow-right"></i>
+            </a>
+
+            <!-- Decorative bottom glow -->
+            <div class="launch-glow"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo logo-link">
+                <img src="assets/logo.png" alt="O Creation" class="logo-img">
+                <div class="logo-wordmark">
+                    <span class="logo-wordmark-name">O Creation</span>
+                    <span class="logo-wordmark-sub">Travel &amp; Tourism</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#vision">About</a>
+                <a href="#leadership">Team</a>
+                <a href="#contact" class="btn btn-primary nav-btn">Enquire Now</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Canvas for particle effect -->
+        <canvas id="hero-particles"></canvas>
+
+        <!-- Video Montage Background — dual-buffer crossfade (no black flash) -->
+        <div class="hero-video-wrapper">
+            <video id="hero-vid-a" class="hero-video hero-vid-active" autoplay muted playsinline
+                poster="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1920&auto=format&fit=crop">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-shot-of-a-tropical-beach-with-turquoise-water-1216-large.mp4" type="video/mp4">
+            </video>
+            <video id="hero-vid-b" class="hero-video" muted playsinline preload="none"></video>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content">
+            <div class="hero-text-box reveal-up">
+                <p class="tagline">ISO 9001:2015 Certified Agency</p>
+                <h1 class="hero-title">Transforming Dreams <br><span>Into Reality</span></h1>
+                <p class="hero-desc">Experience cinematic, luxury travel tailored perfectly to your wanderlust. From the heart of Guruvayoor to the UAE and beyond.</p>
+                
+                <div class="hero-actions">
+                    <a href="#destinations" class="btn btn-primary btn-lg">Explore Packages</a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Talk to an Expert</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">500+</span>
+                        <span class="stat-label">Happy Travelers</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">40+</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">5<i class="fas fa-star" style="color: var(--gold); font-size: 0.8rem; margin-left: 5px;"></i></span>
+                        <span class="stat-label">Client Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Search/Filter Glass Card -->
+            <div class="hero-search-card tilt-card reveal-up" style="transition-delay: 0.2s;">
+                <h3>Find Your Next Adventure</h3>
+                <form class="search-form" onsubmit="sendSearchWhatsApp(event)">
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="search-where" placeholder="Where to?">
+                    </div>
+                    <div class="form-group form-group-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="search-when" class="date-input">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-user-friends"></i>
+                        <input type="number" id="search-guests" placeholder="No. of guests" min="1">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-search">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <p>Scroll to explore</p>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">What We Offer</h4>
+                <h2 class="title">Bespoke Travel Services</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card glass-panel reveal-up">
+                    <div class="service-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Domestic & Int. Tours</h3>
+                    <p>Curated tour packages designed for ultimate comfort and breathtaking experiences across the globe.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.1s;">
+                    <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Honeymoon Packages</h3>
+                    <p>Romantic getaways crafted carefully to give you memories that last a lifetime in exotic locations.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.2s;">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Educational Tours</h3>
+                    <p>Inspiring college and educational tours balancing fun, learning, and cultural immersion.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.3s;">
+                    <div class="service-icon"><i class="fas fa-passport"></i></div>
+                    <h3>Visa & Passport Assist</h3>
+                    <p>Hassle-free documentation and processing support for your travel needs.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.4s;">
+                    <div class="service-icon"><i class="fas fa-hotel"></i></div>
+                    <h3>Hotel & Flight Bookings</h3>
+                    <p>Premium accommodations and smooth transit arrangements at the best competitive prices.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.5s;">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>Group & Corporate Tours</h3>
+                    <p>Seamlessly organized group travel and corporate retreats tailored to your organization's goals.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.6s;">
+                    <div class="service-icon"><i class="fas fa-kaaba"></i></div>
+                    <h3>Hajj & Umrah</h3>
+                    <p>Sacred spiritual journeys meticulously organized with care, comfort, and devotion every step of the way.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.7s;">
+                    <div class="service-icon"><i class="fas fa-person-hiking"></i></div>
+                    <h3>Solo Trips</h3>
+                    <p>Empowering solo travel experiences tailored for adventure seekers ready to explore the world independently.</p>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.8s;">
+                    <div class="service-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h3>Hotel & Resort Booking</h3>
+                    <p>Handpicked luxury hotels and resorts ensuring a world-class stay at every destination you visit.</p>
+                </div>
+
+                <!-- Service 10 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 0.9s;">
+                    <div class="service-icon"><i class="fas fa-taxi"></i></div>
+                    <h3>24×7 Taxi All Over India</h3>
+                    <p>Round-the-clock cab and taxi services covering every corner of India — reliable, comfortable, and affordable.</p>
+                </div>
+
+                <!-- Service 11 -->
+                <div class="service-card glass-panel reveal-up" style="transition-delay: 1.0s;">
+                    <div class="service-icon"><i class="fas fa-place-of-worship"></i></div>
+                    <h3>Pilgrim's Journeys</h3>
+                    <p>Spiritually enriching pilgrimages to sacred destinations across India and beyond, curated with reverence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Destinations Section -->
+    <section class="destinations section-padding bg-light" id="destinations">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">Editorial Gallery</h4>
+                <h2 class="title">Featured Destinations</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="masonry-gallery reveal-up">
+                <div class="gallery-item item-large">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Dubai">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Dubai, UAE</h3>
+                            <p>Luxury & Modern Marvels</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Beach Resort">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Maldives</h3>
+                            <p>Tropical Paradise</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item item-tall">
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=2020&auto=format&fit=crop" alt="Paris">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Paris, France</h3>
+                            <p>City of Love</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item item-tall">
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1983&auto=format&fit=crop" alt="Venice">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Venice, Italy</h3>
+                            <p>Historic Romances</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?q=80&w=2070&auto=format&fit=crop" alt="Mountains">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Swiss Alps</h3>
+                            <p>Winter Wonderland</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item item-wide">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" alt="Kerala">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Kerala, India</h3>
+                            <p>God's Own Country</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-btn reveal-up" style="margin-top: 4rem; text-align: center;">
+                <a href="#contact" class="btn btn-outline" style="border-color: var(--deep-brown); color: var(--deep-brown);">View All Packages <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Locations Section -->
+    <section class="locations-section section-padding" id="locations">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">Where We Are</h4>
+                <h2 class="title">Our Office Locations</h2>
+                <div class="title-line"></div>
+                <p class="locations-intro reveal-up">With a strong presence across Kerala and an upcoming international office, we are always close to you.</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card glass-panel reveal-up">
+                    <div class="location-icon hq"><i class="fas fa-star"></i></div>
+                    <div class="location-badge">Headquarters</div>
+                    <h3>Guruvayur</h3>
+                    <p>Kerala, India</p>
+                    <span class="location-status active">Active</span>
+                </div>
+                <div class="location-card glass-panel reveal-up" style="transition-delay: 0.1s;">
+                    <div class="location-icon"><i class="fas fa-city"></i></div>
+                    <h3>Cochin</h3>
+                    <p>Kerala, India</p>
+                    <span class="location-status active">Active</span>
+                </div>
+                <div class="location-card glass-panel reveal-up" style="transition-delay: 0.2s;">
+                    <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Kasaragod</h3>
+                    <p>Kerala, India</p>
+                    <span class="location-status active">Active</span>
+                </div>
+                <div class="location-card glass-panel reveal-up" style="transition-delay: 0.3s;">
+                    <div class="location-icon uae"><i class="fas fa-plane-arrival"></i></div>
+                    <div class="location-badge upcoming">Coming Soon</div>
+                    <h3>UAE</h3>
+                    <p>United Arab Emirates</p>
+                    <span class="location-status upcoming-status">May 23, 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission section-padding" id="vision">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">Who We Are</h4>
+                <h2 class="title">Our Vision & Mission</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="vm-grid">
+                <div class="vm-card vision-card glass-panel reveal-left">
+                    <div class="vm-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be a trusted and respected organization recognized for excellence, integrity, and sustainable growth, delivering lasting value to customers, employees, and stakeholders.</p>
+                </div>
+                <div class="vm-card mission-card glass-panel reveal-right">
+                    <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to provide high-quality products and services through professionalism, innovation, and ethical practices. We are committed to continuous improvement, customer satisfaction, teamwork, and responsible business operations that contribute positively to society and long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding bg-light" id="about">
+        <!-- 3D Globe Placeholder Background Effect -->
+        <div class="globe-container" id="globe-container"></div>
+        <div class="container about-container">
+            <div class="about-image reveal-left">
+                <div class="image-wrapper glass-panel tilt-card">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Airplane Over Clouds">
+                    <div class="iso-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>ISO 9001:2015</span>
+                        <small>Certified</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-content reveal-right">
+                <h4 class="subtitle">Our Story</h4>
+                <h2 class="title">Crafting Premium Journeys Since Inception</h2>
+                <p class="about-text">Based in the culturally rich city of Guruvayoor, Kerala, and soon expanding to the UAE, O Creation Travel &amp; Tourism is a premier, ISO 9001:2015 certified agency dedicated to transforming your travel dreams into tangible, breathtaking realities.</p>
+                <p class="about-text">With a profound commitment to quality and a cinematic approach to experiencing the world, we don't just book trips—we curate stories. We ensure every detail is handled with precision.</p>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Best Price Guarantee</li>
+                    <li><i class="fas fa-check-circle"></i> 24x7 Dedicated Support</li>
+                    <li><i class="fas fa-check-circle"></i> Pan-Global Reach</li>
+                    <li><i class="fas fa-check-circle"></i> Highly Personalized Itineraries</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership / Words from the Team -->
+    <section class="leadership section-padding" id="leadership">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">Words from Our Leaders</h4>
+                <h2 class="title">Meet the Team Behind O'Creation</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="leadership-grid">
+
+                <!-- CEO -->
+                <div class="leader-card glass-panel reveal-up" id="leader-ceo">
+                    <div class="leader-avatar">
+                        <div class="avatar-ring ceo-ring"></div>
+                        <div class="avatar-initials">FK</div>
+                    </div>
+                    <div class="leader-badge ceo-badge">CEO</div>
+                    <h3 class="leader-name">Fazil Kallayil</h3>
+                    <p class="leader-title">Chief Executive Officer</p>
+                    <blockquote class="leader-quote">
+                        &ldquo;At O&rsquo;Creation, we believe that creativity has the power to transform businesses and shape strong brand identities. Our mission is to deliver innovative design and strategic communication solutions that help our clients stand out in a competitive marketplace. With a passionate team and a deep understanding of branding, design, and digital communication, we work closely with our clients to turn ideas into impactful realities. We remain committed to creativity, quality, and building long-lasting partnerships that drive success and growth.&rdquo;
+                    </blockquote>
+                    <div class="leader-divider"></div>
+                </div>
+
+                <!-- General Manager -->
+                <div class="leader-card glass-panel reveal-up" id="leader-gm" style="transition-delay: 0.15s;">
+                    <div class="leader-avatar">
+                        <div class="avatar-ring gm-ring"></div>
+                        <div class="avatar-initials">MN</div>
+                    </div>
+                    <div class="leader-badge gm-badge">GM</div>
+                    <h3 class="leader-name">Mohammed Nhaeel</h3>
+                    <p class="leader-title">General Manager</p>
+                    <blockquote class="leader-quote">
+                        &ldquo;At O&rsquo;Creation, we believe great spaces begin with great ideas. Our focus is on delivering innovative designs, exceptional quality, and lasting value in every project we undertake. Together with our talented team and trusted partners, we continue to shape spaces that inspire and stand the test of time.&rdquo;
+                    </blockquote>
+                    <div class="leader-divider"></div>
+                </div>
+
+                <!-- Operations & Admin -->
+                <div class="leader-card glass-panel reveal-up" id="leader-admin" style="transition-delay: 0.3s;">
+                    <div class="leader-avatar">
+                        <div class="avatar-ring admin-ring"></div>
+                        <div class="avatar-initials">RS</div>
+                    </div>
+                    <div class="leader-badge admin-badge">Admin</div>
+                    <h3 class="leader-name">Rinshana Sherin</h3>
+                    <p class="leader-title">Operations & Administration</p>
+                    <blockquote class="leader-quote">
+                        &ldquo;Behind every successful project at O&rsquo;Creation is a strong foundation of efficient administration and teamwork. Our commitment is to ensure seamless coordination, professionalism, and support across all operations, enabling creativity and excellence to flourish.&rdquo;
+                    </blockquote>
+                    <div class="leader-divider"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Instagram Highlights Section -->
+    <section class="instagram-section section-padding" id="moments">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">Join Our Journey</h4>
+                <h2 class="title" style="color: var(--deep-brown);">Instagram Highlights</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="instagram-reel-container reveal-up">
+                <iframe src="https://www.instagram.com/reel/DWl8HcCke92/embed" 
+                        width="100%" 
+                        height="580" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        allowtransparency="true"
+                        style="max-width: 400px; display: block; margin: 0 auto;">
+                </iframe>
+            </div>
+            
+            <div class="instagram-cta reveal-up" style="margin-top: 3rem;">
+                <a href="https://instagram.com/ocreation.in" target="_blank" class="btn btn-outline btn-lg" style="color: var(--deep-brown); border-color: var(--deep-brown);">Follow Us on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Enquiry Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info reveal-left">
+                <h4 class="subtitle">Get in Touch</h4>
+                <h2 class="title" style="color: var(--cream);">Let's Plan Your Next Escape</h2>
+                <p class="contact-desc">Ready to embark on a journey of a lifetime? Fill out the inquiry form and our travel experts will get back to you with an exclusive itinerary.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info">
+                            <h5>Phone</h5>
+                            <p>+91 96335 08640</p>
+                            <p>+91 99959 18620</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon"><i class="fab fa-instagram"></i></div>
+                        <div class="info">
+                            <h5>Instagram</h5>
+                            <p><a href="https://instagram.com/ocreation.in" target="_blank" style="color: var(--cream); text-decoration: none;">@ocreation.in</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info">
+                            <h5>Locations</h5>
+                            <p>Guruvayoor, Kerala, India</p>
+                            <p>UAE (Expanding Soon)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper glass-panel reveal-right">
+                <form class="contact-form" id="enquiry-form" onsubmit="sendWhatsAppEnquiry(event)">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="travelType">Travel Type</label>
+                            <select id="travelType">
+                                <option value="domestic">Domestic Tour</option>
+                                <option value="international">International Tour</option>
+                                <option value="honeymoon">Honeymoon Package</option>
+                                <option value="educational">Educational Tour</option>
+                                <option value="corporate">Corporate Group</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="travelers">No. of Travelers</label>
+                            <input type="number" id="travelers" min="1" placeholder="2">
+                        </div>
+                        <div class="input-group">
+                            <label for="dates">Preferred Dates</label>
+                            <input type="text" id="dates" placeholder="e.g. Oct 2026">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="Where do you want to go?">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="message">Additional Message</label>
+                        <textarea id="message" rows="4" placeholder="Any special requests?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fab fa-whatsapp" style="margin-right:8px; font-size:1.2rem;"></i>Send Enquiry via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo-link footer-logo-link">
+                    <img src="assets/logo.png" alt="O Creation" class="footer-logo-icon">
+                    <div class="footer-logo-text">
+                        <span class="footer-logo-name">O Creation</span>
+                        <span class="footer-logo-tagline">Travel &amp; Tourism</span>
+                    </div>
+                </a>
+                <p>Transforming Dreams into Reality. <br>Your premium travel partner in Guruvayoor and UAE.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/ocreation.in" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#vision">Vision & Mission</a></li>
+                    <li><a href="#leadership">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Honeymoon Packages</li>
+                    <li>Domestic & Int. Tours</li>
+                    <li>Educational Tours</li>
+                    <li>Hajj & Umrah</li>
+                    <li>Solo Trips</li>
+                    <li>Visa & Passport Assistance</li>
+                    <li>Hotel & Resort Booking</li>
+                    <li>24×7 Taxi India</li>
+                    <li>Pilgrim's Journeys</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 O Creation Travel & Tourism. All rights reserved.</p>
+            <p>ISO 9001:2015 Certified</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919633508640" target="_blank" rel="noopener noreferrer"
+       class="whatsapp-float" id="whatsapp-float" aria-label="Chat on WhatsApp">
+        <div class="wa-icon-wrap">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <span class="wa-label">Chat with us</span>
+        <div class="wa-ping"></div>
+    </a>
+
+    <!-- Scripts -->
+    <!-- GSAP for Advanced Animations -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis for Smooth Scrolling -->
+    <script defer src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- Three.js for 3D globe effect -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Custom JS -->
+    <script defer src="js/main.js"></script>
+</body>
+</html>
