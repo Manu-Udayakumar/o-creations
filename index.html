@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="/assets/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Creation Travel & Tourism | Transforming Dreams into Reality</title>
@@ -124,13 +123,12 @@
         <!-- Canvas for particle effect -->
         <canvas id="hero-particles"></canvas>
 
-        <!-- Video Montage Background — dual-buffer crossfade (no black flash) -->
-        <div class="hero-video-wrapper">
-            <video id="hero-vid-a" class="hero-video hero-vid-active" autoplay muted playsinline
-                poster="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1920&auto=format&fit=crop">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-shot-of-a-tropical-beach-with-turquoise-water-1216-large.mp4" type="video/mp4">
-            </video>
-            <video id="hero-vid-b" class="hero-video" muted playsinline preload="none"></video>
+        <!-- Static Background Image -->
+        <div class="hero-image-wrapper" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden;">
+            <img src="assets/kashmir-bg.jpg" 
+                 class="hero-video hero-vid-active" 
+                 alt="Kashmir Lake Tourist Boat Background" 
+                 style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div class="hero-overlay"></div>
         
@@ -173,7 +171,11 @@
                     </div>
                     <div class="form-group form-group-date">
                         <i class="fas fa-calendar-alt"></i>
-                        <input type="date" id="search-when" class="date-input">
+                        <input type="text" id="search-when-start" class="date-input" placeholder="Start Date" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')">
+                    </div>
+                    <div class="form-group form-group-date">
+                        <i class="fas fa-calendar-check"></i>
+                        <input type="text" id="search-when-end" class="date-input" placeholder="End Date" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')">
                     </div>
                     <div class="form-group">
                         <i class="fas fa-user-friends"></i>
@@ -345,7 +347,7 @@
                 </div>
                 
                 <div class="gallery-item item-wide">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" alt="Kerala">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop" alt="Kerala Backwaters">
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <h3>Kerala, India</h3>
@@ -515,7 +517,70 @@
         </div>
     </section>
 
-
+    <!-- Google Reviews Section -->
+    <section class="reviews-section section-padding" id="reviews">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h4 class="subtitle">What Our Clients Say</h4>
+                <h2 class="title">Google Reviews</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card glass-panel">
+                    <div class="review-header">
+                        <div class="review-initials" style="background:var(--warm-gold); color:#1A0F0A;">MS</div>
+                        <div class="review-author">
+                            <span class="review-name">muhammed shafi</span>
+                            <span class="review-meta">3 reviews · 1 photo</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span style="font-family: var(--font-sans); font-size: 0.8rem; color: rgba(45,26,17,0.5); margin-left: 5px;">a month ago</span>
+                    </div>
+                    <p class="review-text">Excellent service. Appreciable, and looking forward to collaborating.</p>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card glass-panel">
+                    <div class="review-header">
+                        <div class="review-initials" style="background:#4A6266; color:#fff;">P</div>
+                        <div class="review-author">
+                            <span class="review-name">Pravitha Prabhakaran</span>
+                            <span class="review-meta">6 reviews</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span style="font-family: var(--font-sans); font-size: 0.8rem; color: rgba(45,26,17,0.5); margin-left: 5px;">10 months ago</span>
+                    </div>
+                    <p class="review-text">Friendly staff's with excellent service and communication. We have been booking all our travels with them for past two years and everytime they have delivering the best service..</p>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card glass-panel">
+                    <div class="review-header">
+                        <div class="review-initials" style="background:#D1E8E2; color:#1A0F0A;">R</div>
+                        <div class="review-author">
+                            <span class="review-name">Ramya C.M</span>
+                            <span class="review-meta">2 reviews</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span style="font-family: var(--font-sans); font-size: 0.8rem; color: rgba(45,26,17,0.5); margin-left: 5px;">10 months ago</span>
+                    </div>
+                    <p class="review-text">Excellent service. Satisfied and keep doing the same 👍 ...</p>
+                </div>
+            </div>
+            
+            <div class="reviews-btn-wrapper" style="margin-top: 2rem;">
+                <a href="https://www.google.com/maps/place/O+CREATION/@10.5801877,73.6011036,8z/data=!4m12!1m2!2m1!1sO+CREATIONS!3m8!1s0x3ba795aba3102d01:0x4e50243219a049a!8m2!3d10.5801877!4d76.0400684!9m1!1b1!15sCgtPIENSRUFUSU9OU1oNIgtvIGNyZWF0aW9uc5IBDXRyYXZlbF9hZ2VuY3ngAQA!16s%2Fg%2F11xfj2v0k_?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-outline btn-lg" style="margin-top: 1rem;">Explore More Reviews <i class="fab fa-google" style="margin-left:8px;"></i></a>
+            </div>
+        </div>
+    </section>
 
     <!-- Instagram Highlights Section -->
     <section class="instagram-section section-padding" id="moments">
@@ -527,7 +592,7 @@
             </div>
             
             <div class="instagram-reel-container reveal-up">
-                <iframe src="https://www.instagram.com/reel/DWl8HcCke92/embed" 
+                <iframe src="https://www.instagram.com/reel/DUi69HHD01O/embed" 
                         width="100%" 
                         height="580" 
                         frameborder="0" 
@@ -556,8 +621,8 @@
                         <div class="icon"><i class="fas fa-phone-alt"></i></div>
                         <div class="info">
                             <h5>Phone</h5>
-                            <p>+91 96335 08640</p>
-                            <p>+91 99959 18620</p>
+                            <p>+91 96335 08640 (24x7)</p>
+                            <p>+91 99959 18620 (Kasaragod)</p>
                         </div>
                     </div>
                     
@@ -573,7 +638,9 @@
                         <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="info">
                             <h5>Locations</h5>
-                            <p>Guruvayoor, Kerala, India</p>
+                            <p>Guruvayoor (Headquarters)</p>
+                            <p>Cochin, Kerala</p>
+                            <p>Kasaragod, Kerala</p>
                             <p>UAE (Expanding Soon)</p>
                         </div>
                     </div>
@@ -584,11 +651,11 @@
                 <form class="contact-form" id="enquiry-form" onsubmit="sendWhatsAppEnquiry(event)">
                     <div class="form-row">
                         <div class="input-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required placeholder="John Doe">
+                            <label for="name">First Name <span style="color:var(--warm-gold)">*</span></label>
+                            <input type="text" id="name" required placeholder="John">
                         </div>
                         <div class="input-group">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone">Mobile Number <span style="color:var(--warm-gold)">*</span></label>
                             <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
                         </div>
                     </div>
@@ -601,11 +668,15 @@
                         <div class="input-group">
                             <label for="travelType">Travel Type</label>
                             <select id="travelType">
-                                <option value="domestic">Domestic Tour</option>
-                                <option value="international">International Tour</option>
-                                <option value="honeymoon">Honeymoon Package</option>
-                                <option value="educational">Educational Tour</option>
-                                <option value="corporate">Corporate Group</option>
+                                <option value="Domestic & Int. Tours">Domestic & Int. Tours</option>
+                                <option value="Honeymoon Packages">Honeymoon Packages</option>
+                                <option value="Educational Tours">Educational Tours</option>
+                                <option value="Visa & Passport Assist">Visa & Passport Assist</option>
+                                <option value="Hotel & Flight Bookings">Hotel & Flight Bookings</option>
+                                <option value="Group & Corporate Tours">Group & Corporate Tours</option>
+                                <option value="Hajj & Umrah Services">Hajj & Umrah Services</option>
+                                <option value="24x7 Taxi Kerala">24x7 Taxi Kerala</option>
+                                <option value="Solo Trips">Solo Trips</option>
                             </select>
                         </div>
                     </div>
@@ -616,15 +687,23 @@
                             <input type="number" id="travelers" min="1" placeholder="2">
                         </div>
                         <div class="input-group">
-                            <label for="dates">Preferred Dates</label>
-                            <input type="text" id="dates" placeholder="e.g. Oct 2026">
+                            <label for="destination">Destination</label>
+                            <input type="text" id="destination" placeholder="Where do you want to go?">
                         </div>
                     </div>
                     
-                    <div class="input-group">
-                        <label for="destination">Destination</label>
-                        <input type="text" id="destination" placeholder="Where do you want to go?">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="dates-start">Start Date</label>
+                            <input type="date" id="dates-start">
+                        </div>
+                        <div class="input-group">
+                            <label for="dates-end">End Date</label>
+                            <input type="date" id="dates-end">
+                        </div>
                     </div>
+                    
+
                     
                     <div class="input-group">
                         <label for="message">Additional Message</label>

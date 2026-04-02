@@ -1427,6 +1427,98 @@ img {
 
 
 /* =========================================================================
+   GOOGLE REVIEWS
+   ========================================================================= */
+.reviews-section {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    background-color: var(--deep-brown); /* Explicitly dark so white text and glass panel pops! */
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+.review-card {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+    height: 100%;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--warm-gold);
+    padding: 2px;
+    background: #fff;
+}
+
+.review-initials {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--warm-gold);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--deep-brown);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.review-meta {
+    font-size: 0.8rem;
+    color: rgba(45,26,17,0.6);
+}
+
+.review-stars {
+    color: #FFB400; /* Google yellow */
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(45,26,17,0.85);
+    flex-grow: 1;
+}
+
+.reviews-btn-wrapper {
+    text-align: center;
+}
+
+/* =========================================================================
    INSTAGRAM MOMENTS
    ========================================================================= */
 .instagram-section {

@@ -6,25 +6,25 @@ function sendSearchWhatsApp(event) {
     const WA_NUMBER = '919633508640';
 
     const where  = (document.getElementById('search-where')?.value  || '').trim();
-    const when   =  document.getElementById('search-when')?.value   || '';
+    const whenStart = document.getElementById('search-when-start')?.value || '';
+    const whenEnd   = document.getElementById('search-when-end')?.value   || '';
     const guests = (document.getElementById('search-guests')?.value || '').trim();
 
-    // Format date nicely
-    let whenFormatted = when || '—';
-    if (when) {
-        const d = new Date(when);
-        if (!isNaN(d)) {
-            whenFormatted = d.toLocaleDateString('en-IN', {
-                day: 'numeric', month: 'long', year: 'numeric'
-            });
-        }
+    // Format dates nicely
+    function formatStr(dateStr) {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        return isNaN(d) ? '' : d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
     }
+    const s = formatStr(whenStart);
+    const e = formatStr(whenEnd);
+    let whenFormatted = (s || e) ? `${s || 'TBD'} to ${e || 'TBD'}` : '—';
 
     const msg =
         `✈️ *Quick Travel Enquiry — O'Creation*\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `🗺️ *Destination:* ${where  || '—'}\n` +
-        `📅 *Travel Date:*  ${whenFormatted}\n` +
+        `📅 *Dates:*        ${whenFormatted}\n` +
         `👥 *Guests:*       ${guests || '—'}\n` +
         `━━━━━━━━━━━━━━━━━━━━\n` +
         `_Sent via ocreation.in website_`;
@@ -48,9 +48,20 @@ function sendWhatsAppEnquiry(event) {
     const email       = (document.getElementById('email')?.value       || '').trim();
     const travelType  = (document.getElementById('travelType')?.selectedOptions[0]?.text || '').trim();
     const travelers   = (document.getElementById('travelers')?.value   || '').trim();
-    const dates       = (document.getElementById('dates')?.value       || '').trim();
+    const datesStart  = (document.getElementById('dates-start')?.value || '').trim();
+    const datesEnd    = (document.getElementById('dates-end')?.value   || '').trim();
     const destination = (document.getElementById('destination')?.value || '').trim();
     const notes       = (document.getElementById('message')?.value     || '').trim();
+
+    // Format dates nicely
+    function formatStr(dateStr) {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        return isNaN(d) ? '' : d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+    const ds = formatStr(datesStart);
+    const de = formatStr(datesEnd);
+    let datesParsed = (ds || de) ? `${ds || 'TBD'} to ${de || 'TBD'}` : '—';
 
     // Build a structured, emoji-rich message
     let msg = '';
@@ -63,7 +74,7 @@ function sendWhatsAppEnquiry(event) {
     msg += `✈️ *Travel Type:* ${travelType || '—'}\n`;
     msg += `🗺️ *Destination:* ${destination || '—'}\n`;
     msg += `👥 *No. of Travelers:* ${travelers || '—'}\n`;
-    msg += `📅 *Preferred Dates:* ${dates || '—'}\n`;
+    msg += `📅 *Preferred Dates:* ${datesParsed}\n`;
     if (notes) {
         msg += `━━━━━━━━━━━━━━━━━━━━\n`;
         msg += `💬 *Additional Notes:*\n${notes}\n`;
@@ -144,62 +155,9 @@ function sendWhatsAppEnquiry(event) {
     })();
 
     /* =========================================================================
-       HERO VIDEO MONTAGE — dual-buffer A/B crossfade (no black flash)
+       HERO VIDEO MONTAGE (DISABLED)
        ========================================================================= */
-    (function initVideoMontage() {
-        const vidA = document.getElementById('hero-vid-a');
-        const vidB = document.getElementById('hero-vid-b');
-        if (!vidA || !vidB) return;
-
-        const CLIPS = [
-            'https://assets.mixkit.co/videos/preview/mixkit-aerial-shot-of-a-tropical-beach-with-turquoise-water-1216-large.mp4',
-            'https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-open-sea-443-large.mp4',
-            'https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4',
-            'https://assets.mixkit.co/videos/preview/mixkit-aerial-of-city-lights-at-night-1210-large.mp4',
-            'https://assets.mixkit.co/videos/preview/mixkit-mountain-peak-in-the-clouds-4714-large.mp4',
-            'https://assets.mixkit.co/videos/preview/mixkit-waterfall-in-forest-2213-large.mp4',
-        ];
-
-        let clipIndex  = 0;        // current clip (on vidA initially)
-        let activeVid  = vidA;
-        let standbyVid = vidB;
-        const DURATION = 13000;    // 13 s per clip
-
-        // Start the first video
-        vidA.play().catch(() => {});
-
-        function queueNext() {
-            clipIndex = (clipIndex + 1) % CLIPS.length;
-
-            // Pre-load next clip on the standby video
-            standbyVid.src = CLIPS[clipIndex];
-            standbyVid.load();
-
-            standbyVid.oncanplay = function () {
-                standbyVid.oncanplay = null;
-                standbyVid.play().catch(() => {});
-
-                // Crossfade: standby in, active out
-                standbyVid.classList.add('hero-vid-active');
-                activeVid.classList.remove('hero-vid-active');
-
-                // Swap references
-                const tmp  = activeVid;
-                activeVid  = standbyVid;
-                standbyVid = tmp;
-            };
-
-            // If video can't load, skip to the next one
-            standbyVid.onerror = function () {
-                standbyVid.onerror = null;
-                standbyVid.oncanplay = null;
-                queueNext();
-            };
-        }
-
-        // Schedule clip switches
-        setInterval(queueNext, DURATION);
-    })();
+    // Video montage logic abandoned in favor of a gorgeous static Kashmiri boat background.
 
     /* =========================================================================
        CUSTOM CURSOR (Desktop only)
