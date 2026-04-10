@@ -2098,7 +2098,30 @@ img {
     .logo-img {
         height: 50px;
     }
-    
+
+    /* ── Mobile navbar fix: push hero content below the fixed header ── */
+    .hero-content {
+        padding-top: 110px; /* previously 80px – gives clearance on mobile */
+        justify-content: flex-start;
+    }
+
+    /* ISO tagline: keep it visible but don't let it overlap the navbar */
+    .tagline {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 2.5px;
+    }
+
+    /* Logo wordmark: slightly smaller so it fits comfortably in the header */
+    .logo-wordmark-name {
+        font-size: 1.15rem;
+    }
+    .logo-wordmark-sub {
+        font-size: 0.55rem;
+        letter-spacing: 1.5px;
+    }
+
     .hero-title {
         font-size: 2.8rem;
     }
